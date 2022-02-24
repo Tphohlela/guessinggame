@@ -9,7 +9,7 @@
     <title>guess game</title>
 </head>
 
-<body>
+<body class="border">
     <h1>
         Guessing game
     </h1>
@@ -17,8 +17,15 @@
     <h4>
         Please choose a number and press guess
     </h4>
+    <div class="errors">
 
-    <div class="textbox">
+    </div>
+
+    <div class="newGameMessage">
+
+    </div>
+
+    <div class="textbox" >
         <input type="number" class="input" id="quantity" name="quantity">
         <button type="button" onclick="guessGame()">guess</button>
     </div>
@@ -30,4 +37,5 @@
 </body>
 
 <script src="./guess.js"></script>
+
 </html>

@@ -1,30 +1,41 @@
 const inputElem = document.querySelector('.input');
 const messageElem = document.querySelector('.message');
+const errorElem = document.querySelector('.errors');
+const newGameMessageElem = document.querySelector('.newGameMessage');
 const randomNumber = Math.ceil((Math.random() * 100));
 
-function timer() {
-    myVar1 = setTimeout(function () {
-        messageElem.innerHTML = null;
-    }
-        , 5000);
-}
 
 function guessGame() {
-    if (inputElem.value > randomNumber) {
-        messageElem.innerHTML = 'Your guess is too high';
+    if (inputElem.value > 100 || inputElem.value < 1) {
+        errorElem.innerHTML = 'Please enter numbers that range between 1 and 100';
+        messageElem.innerHTML = "";
+
+        setTimeout(function () {
+            errorElem.innerHTML = "";
+        }, 5000);
     }
+    
+    if (inputElem.value > 0 && inputElem.value < 101) {
 
-    else if (inputElem.value < randomNumber) {
-        messageElem.innerHTML = 'Your guess is too low';
-    }
+        if (inputElem.value > randomNumber) {
+            messageElem.innerHTML = 'Your guess is too high';
+        }
 
-    else {
-        messageElem.innerHTML = `Correct, the secret number is ${randomNumber}`;
-        timer();
-        setTimeout(function(){
-            location.reload();
-            messageElem.innerHTML = 'New game started';
-          }, 5000);
+        else if (inputElem.value < randomNumber) {
+            messageElem.innerHTML = 'Your guess is too low';
+        }
 
+        else {
+            messageElem.innerHTML = `Correct, the secret number is ${randomNumber}`;
+
+            setTimeout(function () {
+                newGameMessageElem.innerHTML = "New game started !";
+            }, 5000);
+
+            setTimeout(function () {
+                messageElem.innerHTML = "";
+                location.reload();
+            }, 8000);
+        }
     }
 }

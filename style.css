@@ -1,4 +1,67 @@
 body{
     background-color: lavender;
-    text-align: center;
+    text-align: center;   
 }
+
+h1{
+    font-family: 'Brush Script MT', cursive;
+}
+
+h4{
+    font-family: 'Brush Script MT', cursive;
+}
+
+.errors{
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.newGameMessage{
+    color: green;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.border {
+    margin: auto;
+    margin-top: 200px;
+    padding-top: -100px;
+    width: 60%;
+    border: 3px solid white;
+    padding: 10px;
+  }
+
+  input[type=number]  {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  input[type=number]:focus {
+    border: 3px solid #555;
+  }
+
+  button {
+    background-color: rgb(155, 155, 204);
+    border: rgb(155, 155, 204);
+    border-radius: 12px;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid rgb(155, 155, 204);
+  }
+
+  .message{
+      font-family: Arial, Helvetica, sans-serif;
+  }
