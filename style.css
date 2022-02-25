@@ -5,20 +5,24 @@ body{
 
 h1{
     font-family: 'Brush Script MT', cursive;
+    font-size: 70px;
 }
 
 h4{
     font-family: 'Brush Script MT', cursive;
+    font-size:xx-large;
 }
 
 .errors{
     color: red;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
 }
 
 .newGameMessage{
     color: green;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
 }
 
 .border {
@@ -35,6 +39,7 @@ h4{
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    font-size: x-large;
   }
 
   input[type=number]:focus {
@@ -50,7 +55,7 @@ h4{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 12px;
+    font-size: x-large;
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
@@ -64,4 +69,5 @@ h4{
 
   .message{
       font-family: Arial, Helvetica, sans-serif;
+      font-size: x-large;
   }

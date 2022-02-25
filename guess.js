@@ -34,6 +34,10 @@ function guessGame() {
 
             setTimeout(function () {
                 messageElem.innerHTML = "";
+            }, 5000);
+
+            setTimeout(function () {
+                messageElem.innerHTML = "";
                 location.reload();
             }, 8000);
         }
