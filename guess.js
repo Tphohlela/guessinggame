@@ -4,39 +4,24 @@ const errorElem = document.querySelector('.errors');
 const newGameMessageElem = document.querySelector('.newGameMessage');
 const randomNumber = Math.ceil((Math.random() * 100));
 
+const guessInstance = guessFactoryFunction();
 
-function guessGame() {
+const guessGame = () => {
+
     if (inputElem.value > 100 || inputElem.value < 1) {
-        errorElem.innerHTML = 'Please enter numbers that range between 1 and 100';
+        errorElem.innerHTML = guessInstance.error(inputElem.value)
         messageElem.innerHTML = "";
-
-        setTimeout(function () {
-            errorElem.innerHTML = "";
-        }, 5000);
+        setTimeout(() => errorElem.innerHTML = "", 5000);
     }
-    
+
     if (inputElem.value > 0 && inputElem.value < 101) {
+        messageElem.innerHTML = guessInstance.game(inputElem.value, randomNumber)
 
-        if (inputElem.value > randomNumber) {
-            messageElem.innerHTML = 'Your guess is too high';
-        }
-
-        else if (inputElem.value < randomNumber) {
-            messageElem.innerHTML = 'Your guess is too low';
-        }
-
-        else {
-            messageElem.innerHTML = `Correct, the secret number is ${randomNumber}`;
-
-            setTimeout(function () {
-                newGameMessageElem.innerHTML = "New game started !";
-            }, 5000);
-
-            setTimeout(function () {
-                messageElem.innerHTML = "";
-            }, 5000);
-
-            setTimeout(function () {
+        if (inputElem.value == randomNumber) {
+            setTimeout(() => newGameMessageElem.innerHTML = "New game started !", 5000);
+            setTimeout(() => messageElem.innerHTML = "", 5000);
+            
+            setTimeout(() => {
                 messageElem.innerHTML = "";
                 location.reload();
             }, 8000);
